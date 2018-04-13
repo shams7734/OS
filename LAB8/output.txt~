@@ -1,0 +1,99 @@
+For test case 1:
+
+Types of resources are A,B,C
+Enter Max isntances of A,B,C
+10 5 7
+Enter Current allocation of A,B,C for 5 processes
+0 1 0
+Enter Current allocation of A,B,C for 5 processes
+2 0 0
+Enter Current allocation of A,B,C for 5 processes
+3 0 2
+Enter Current allocation of A,B,C for 5 processes
+2 1 1
+Enter Current allocation of A,B,C for 5 processes
+0 0 2
+Max demand of A,B,C for 5 processes
+7 5 3
+Max demand of A,B,C for 5 processes
+3 2 2
+Max demand of A,B,C for 5 processes
+9 0 2
+Max demand of A,B,C for 5 processes
+2 2 2
+Max demand of A,B,C for 5 processes
+4 3 3
+Need matrix is 
+7	4	3
+1	2	2
+6	0	0
+0	1	1
+4	3	1
+Order is 
+P 1	P 3	P 2	P 4	P 0	Safe sequence possible.
+
+
+for test case 2:
+
+Types of resources are A,B,C
+Enter Max isntances of A,B,C
+7 3 6
+Enter Current allocation of A,B,C for 5 processes
+0 1 0
+Enter Current allocation of A,B,C for 5 processes
+2 0 0
+Enter Current allocation of A,B,C for 5 processes
+3 0 3
+Enter Current allocation of A,B,C for 5 processes
+2 1 1
+Enter Current allocation of A,B,C for 5 processes
+0 0 2
+Max demand of A,B,C for 5 processes
+0 1 0
+Max demand of A,B,C for 5 processes
+2 0 2
+Max demand of A,B,C for 5 processes
+3 0 3
+Max demand of A,B,C for 5 processes
+2 1 1
+Max demand of A,B,C for 5 processes
+0 0 2
+Need matrix is 
+0	0	0
+0	0	2
+0	0	0
+0	0	0
+0	0	0
+Order is 
+P 0	P 2	P 3	P 4	P 1	Safe sequence possible.
+
+
+for test case 3:
+
+Types of resources are A,B
+Enter Max isntances of A,B
+9 5
+Enter Current allocation of A,B for 5 processes
+0 1
+Enter Current allocation of A,B for 5 processes
+0 0
+Enter Current allocation of A,B for 5 processes
+3 0
+Enter Current allocation of A,B for 5 processes
+0 0
+Max demand of A,B for 5 processes
+7 5
+Max demand of A,B for 5 processes
+0 1
+Max demand of A,B for 5 processes
+9 0
+Max demand of A,B for 5 processes
+2 2
+Need matrix is 
+7	4
+0	1
+6	0
+2	2
+Order is 
+P 1	P 2	P 3	P 0	Safe sequence possible.
+

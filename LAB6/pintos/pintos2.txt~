@@ -1,0 +1,41 @@
+######----This is read me file for Pintos assignment 2-----#######
+
+Part 1 :
+		In this part we have to remove the timer_sleep function 
+		and make the sorting program work the same way as it was 
+		working with timer_sleep function. And I have make the 
+		parent and child threads work accordingly. To do that I 
+		have use the funtion thread_yield() which yields the CPU 
+		to the scheduler, which picks a new thread to run.
+		
+		
+		
+Part 2 :
+		In this part first I have to create three threads .
+		First thread will print the id the thread.
+		Second thread will print the name of the thread.
+		Third thread will print the priority of the thread.
+		
+		After that I have to do some changes to make round robin 
+		work as FCFS (first come first serve) . For that I have  to 
+		make a thread perform a large number of task and then check 
+		its execution . If it is executed at its position then it is
+		FCFS but if it is executing at last because of the large 
+		process of the thread then it is ROUND ROBIN as it gives only 
+		a particular time slice or time quantum to a process to execute.
+		In my program I made a thread to work for long time in order to 
+		check the round robin condition and to convert that into FCFS by 
+		modifying the time slice in threads/thread.c
+		
+		
+		
+		
+		
+		
+Extra 30% Part :
+		In this I have to create three threads for executing the sorting program.
+		First thread will create random numbers .
+		Second thread will sort the random numbers generated.
+		Third thread will print the sorted numbers.
+		
+

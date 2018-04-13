@@ -1,0 +1,20 @@
+Assignment 0 Program 1 : In this program the address of a variable is different each time and if we enter in a long loop then
+                         the the address of the variable is the same for the complete loop.But if we perform this on different 
+                         OS the address is different but in long loop the value of address is same.I have written a program for 
+			 that named assign0.c   .
+
+
+
+Assignment 0 Program 2 : In this we have to run the top command It displays the CPU %, memory taken by processes and other details
+			 of the processes.It takes memory6.5 % and CPU 2.7 %.If a browser(firefox) is opened the CPU takes 6.3 % space 
+                         and memory 7.0 % and it continuously goes on changing. firefox is taking most of the CPU and msot of the 
+			 memory share and it changes every sec.
+
+
+Assignment 0 Program 3 : cd ,exit are the commands which does not make system call. strace uses system call to read commands 
+			 from the console and echo back to screen. It reads or echos only one digit/character/
+			 special_character at a time.
+			 
+                         
+                         
+                          

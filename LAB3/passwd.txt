@@ -1,0 +1,15 @@
+//********* passwd.txt file  **********//
+
+
+Ans 3)
+	(a) The output is : -rwsr-xr-x 1 root root 54256 Mar 29  2016 /usr/bin/passwd
+	    
+	    root owns this file.
+
+
+	(b)  The file owner is 'root' and the SUID permission is set (the '4')—so the file is executed as 'root'.
+
+	     The reason the executable is run as 'root' is so that it can modify files that the user would 
+	     not normally be allowed to, without giving user full root access. A default use of this can be seen 
+	     with the /usr/bin/passwd binary file. passwd needs to modify /etc/passwd and /etc/shadow which store 
+	     account information and password hashes for all users and can only be modified by 'root'.

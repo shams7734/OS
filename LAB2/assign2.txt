@@ -1,0 +1,16 @@
+---   This is the code generate my own shell. 
+
+---   It supports commands as like ls , pwd ,clear ,gedit, sleep,cd ,exit, Ctrl +d,etc.
+
+---   It supports '&' command also to work or function in background.
+
+---   In this first we take input from the user and then that input is parsed and is broken into tokens wherever " " is found .
+      And then that command is fork then if process id <0 then chid process can not be forked and if > 0 then parent process  
+      goes in wait state and waits.
+
+---   It also handles gracefully .
+
+---   The code of this is named as 'assign2.c'.
+
+---   I have written the code for pipe also.
+

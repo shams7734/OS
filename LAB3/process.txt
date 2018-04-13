@@ -1,0 +1,52 @@
+//******** process.txt file  ********//
+
+Ans 2)
+
+	(a) 
+	    fork.c :
+	    
+		 Location : linux-4.9.5/kernel/fork.c
+ 
+ 		 Command : find . -name fork.c
+		 
+
+	    sys_fork() :
+
+		 Location : linux-4.9.5$/arch/m68k/kernel/entry.S
+
+		 Command :  grep -r sys_fork
+
+
+	    do_fork() :  
+	    
+		 Location: linux-4.9.5/kernel/fork.c
+
+		 Command : grep -r do_fork
+
+	(b) Location : linux-4.9.5/include/linux/sched.h
+	
+	    Command : grep -r ^'struct task_struct' include/
+
+  		It contains all the information that the kernel has about a process. Each task_struct data structures
+	        describes a process or task in the system. 
+		Each element in the task list is a process descriptor of the type struct task_struct, which is defined 
+		in <linux/sched.h>. The process descriptor contains all the information about a specific process.
+
+	(c) Command to list all make files: tree -I "makefile"
+
+	
+	(d) Location of jiffies: jiffies.c is located at /linux-4.9.5/kernel/time/jiffies.c
+				 jiffies.h is located at /linux-4.9.5/include/linux/jiffies.h
+
+
+	    In operating systems, especially Unix, a jiffy is the time between two successive clock ticks. 
+	    Historically, this has been 10ms. A jiffy in Linux can have various values.
+
+	    OR we can say that
+
+	    The global variable jiffies holds the number of ticks that have occurred since the system booted. 
+	    On boot, the kernel initializes the variable to zero, and it is incremented by one during each timer 
+	    interrupt. Thus, because there are HZ timer interrupts in a second, there are HZ jiffies in a second. 
+	    The system uptime is therefore jiffies/HZ seconds.
+
+

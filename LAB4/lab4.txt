@@ -1,0 +1,68 @@
+### LAB4 
+### Adding my own system call.
+
+
+->This readme file explains or gives us the details of the system call performed by me.First 
+  I downloaded the kernel version 4.9.8 from kernel.org . I have made a hello directory in 
+  the linux-4.9.8 and in the directory I have created two file "hello.c" which contains the 
+  source code to call the sys_call .
+
+  The code for hello.c is : #include <linux/kernel.h>
+
+			     asmlinkage long sys_hello(void)
+			     {
+				printk(“Hello world\n”);
+				return 0;
+			     }
+  It contains printk that is used to print the kernel's log file.
+
+-> And the other file named "Makefile" .It is used in order to ensure that the hello.c is compiled
+   and include in the kernel source code.
+
+   The source code for Makefile is :    obj-y := hello.o
+
+->I have performed few changes in the makefile that is already present in the kernel.
+    line number 842 which says :-   “core-y += kernel/ mm/ fs/ ipc/ security/ crypto/ block/ ”
+
+    change this to   “core-y += kernel/ mm/ fs/ ipc/ security/ crypto/ block/ hello/”
+	This is done to tell the compiler that the source files of our new system call 
+        (sys_hello()) are in present in the hello directory.
+
+->Then in arch/x86/entry/syscalls extra line was added to syscall_64.tbl
+	 332	common	hello			sys_hello
+	 This has to be noted down to make the system call in the userspace program.
+
+->Then in include/linux/ syscalls.h was edited
+	 the following line to the end of the file just before the #endif  statement at the very bottom.
+	 asmlinkage long sys_hello(void);
+	 This defines the prototype of the function of our system call.”asmlinkage” is a key 
+         word used to indicate that all parameters of the function would be available on the stack.
+
+->In order to compile the kernel we need to install the follwing packages i.e. fakeroot 
+  build-essential ncurses-dev xz-utils libssl-dev bc.After that perform following steps
+
+  sudo make menuconfig
+  make -j 4   // -j 4 to use 4 cores to build it.
+  sudo make modules_install install 
+
+->After that reboot the system and check whether the sys_call was implemented or not.
+	This can be done by making a program at home. The "userspace.c" file contains the code.
+	Or we can check it by using dmesg command on the terminal.
+
+	The code for userspace.c is:    #include <stdio.h>
+			#include <linux/kernel.h>
+			#include <sys/syscall.h>
+			#include <unistd.h>
+			int main()
+			{
+				 long int amma = syscall(332);
+				 printf(“System call sys_hello returned %ld\n”, amma);
+				 return 0;
+			}
+
+
+
+-> Problems faced by me :  The kernel compilation was successful but after reboot my wifi 
+   driver was not working. Or it stopped responding.So I have to perform the compilation again 
+   then also it didn't worked.The finally I have to compile the kernel on virtual machine and 
+   again install ubuntu to get my wifi drivers working properly.   

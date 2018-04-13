@@ -1,0 +1,47 @@
+// ******** make.txt file  *********//
+
+Ans 1)-
+	(a) The dependencies are resolved by giving the dependent filename before the `:` and source after it. 
+    
+	(b) $< the first prerequisite (usually the source file).
+
+	     
+	    $@ is the name of the file being generated,
+
+	    
+	    $^ is the names of all the prerequisites, with spaces between them.
+
+
+		e.g: all: library.cpp main.cpp
+		
+		In this case:
+
+		    $@ evaluates to all
+		    $< evaluates to library.cpp
+		    $^ evaluates to library.cpp main.cpp
+
+
+	(c) Give names to the files like makefile.win and makefile.nix and use them:
+
+
+                make -f makefile.win
+		make -f makefile.nix
+
+		or have a Makefile that contains:
+
+		win:
+		  make -f makefile.win
+
+		nix:
+		  make -f makefile.nix
+
+		and use make win or make nix
+
+
+    (d) Dependency is make.h and make.c
+
+
+
+
+
+
